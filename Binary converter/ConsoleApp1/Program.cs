@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
@@ -10,27 +6,26 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            if (args.Length == 0)
+            int number = -1;
+            while (number < 0)
             {
-                Console.WriteLine("no number provided!");
-                return;
+                Console.WriteLine("Please give a number >= 0");
+                number = int.Parse(Console.ReadLine());
             }
 
-            int number = 0;
-
-            number = int.Parse(args[0]);
-            Console.WriteLine($"the Number you gave is{number}");
+            Console.WriteLine("The number you gave is " + number); // grafetai kai alliws --> Console.WriteLine($"the Number you gave is{number}");
 
             string result = Convert(number);
-            Console.WriteLine(result); //console.WriteLine(Convert(number)) einai to idio 
+            Console.WriteLine(result);
 
             Console.WriteLine(Convert(2 * number));
+
             Console.ReadKey();
         }
 
-        static string Convert(int number)
+        static string Convert(int number) // allos tropos xrhsimopoiwntas sunarthsh 
         {
-            int[] digits = new int[32]; // me to new dhlwnoume mia metavliti autou tou tupou
+            int[] digits = new int[32]; // me to new dhlwnw metablhth autou tou tupou
             int i = 0;
 
             while (number / 2 >= 1)
@@ -48,11 +43,10 @@ namespace ConsoleApp1
             while (i >= 0)
             {
                 result = result + digits[i];
-                i = i - 1; // einai san auto i--
+                i = i - 1;
             }
 
             return result;
         }
-
     }
 }
