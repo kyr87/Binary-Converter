@@ -23,7 +23,8 @@ namespace ConsoleApp1
             Console.ReadKey();
         }
 
-        static string Convert(int number) // allos tropos xrhsimopoiwntas sunarthsh 
+        static string Convert(int number) //  sunarthsh pou metatrepei ena arithmo se duadiko
+            
         {
             int[] digits = new int[32]; // me to new dhlwnw metablhth autou tou tupou
             int i = 0;
@@ -33,7 +34,7 @@ namespace ConsoleApp1
                 int remainder = number % 2;
                 digits[i] = remainder;
                 number = number / 2;
-                i = i + 1;
+                i = i + 1; // einai to idio me i--
             }
 
             digits[i] = number;
