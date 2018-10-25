@@ -48,7 +48,7 @@ namespace ConsoleApp1
             while (i >= 0)
             {
                 result = result + digits[i];
-                i = i - 1; // einai san auto i--
+                i = i - 1; // einai san auto i-- 
             }
 
             return result;
