@@ -34,7 +34,7 @@ namespace ConsoleApp1
                 int remainder = number % 2;
                 digits[i] = remainder;
                 number = number / 2;
-                i = i + 1; // einai to idio me i--
+                i = i + 1; 
             }
 
             digits[i] = number;
@@ -44,7 +44,7 @@ namespace ConsoleApp1
             while (i >= 0)
             {
                 result = result + digits[i];
-                i = i - 1;
+                i = i - 1; // einai to idio me i--
             }
 
             return result;
