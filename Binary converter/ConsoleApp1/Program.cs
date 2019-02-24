@@ -13,20 +13,19 @@ namespace ConsoleApp1
                 number = int.Parse(Console.ReadLine());
             }
 
-            Console.WriteLine("The number you gave is " + number); // grafetai kai alliws --> Console.WriteLine($"the Number you gave is{number}");
-
+            Console.WriteLine("The number you gave is " + number);
             string result = Convert(number);
-            Console.WriteLine(result);
+            Console.WriteLine($"Binary number of {number} is " + result);
 
-            Console.WriteLine(Convert(2 * number));
+            Console.WriteLine($"Binary number of {2 * number} is " + Convert(2 * number));
 
             Console.ReadKey();
         }
 
-        static string Convert(int number) //  sunarthsh pou metatrepei ena arithmo se duadiko
+        static string Convert(int number)
 
         {
-            int[] digits = new int[32]; // me to new dhlwnw metablhth autou tou tupou
+            int[] digits = new int[32];
             int i = 0;
 
             while (number / 2 >= 1)
@@ -34,7 +33,7 @@ namespace ConsoleApp1
                 int remainder = number % 2;
                 digits[i] = remainder;
                 number = number / 2;
-                i = i + 1; 
+                i = i + 1;
             }
 
             digits[i] = number;
@@ -44,7 +43,7 @@ namespace ConsoleApp1
             while (i >= 0)
             {
                 result = result + digits[i];
-                i = i - 1; // einai to idio me i--
+                i = i - 1;
             }
 
             return result;
